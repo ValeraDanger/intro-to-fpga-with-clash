@@ -1,9 +1,9 @@
 module adder_logic_1_bit (
-    input  a,
-    input  b,
-    input  c_in,//<1>
-    output c_out,//<2>
-    output sum
+    input logic  a,
+    input logic  b,
+    input logic  c_in, // <1>
+    output logic c_out, // <2>
+    output logic sum
 );
 
   assign sum   = a ^ b ^ c_in;

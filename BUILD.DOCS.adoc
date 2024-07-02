@@ -25,35 +25,10 @@ https://antora.org/[Antora] использует достаточно специ
 ----
 $ npx antora ./antora-playbook.yml --fetch
 ----
+После первой сборки добавлять флаг `--fetch` необязательно.
 
 Для того, чтобы открыть сайт можно выполнить:
 [,console]
 ----
 $ npx http-server build/site -c-1
 ----
-
-== Создание схемы модуля
-
-Для создания схемы модуля нам понадобятся https://github.com/YosysHQ/yosys[Yosys] и https://github.com/nturley/netlistsvg[netlistsvg].
-
-Чтобы не собирать Yosys руками, его можно вытащить вместе с https://github.com/YosysHQ/oss-cad-suite-build[OSS CAD Suite], разархивировать архив и сделать
-[,console]
-----
-$ source <extracted_location>/oss-cad-suite/environment # для bash
-$ source <extracted_location>/oss-cad-suite/environment.fish # для fish
-----
-Подробнее читай у них в README.
-
-Теперь `yosys` должен быть у нас в `PATH`.
-
-Дальше выполнить заклинание:
-[,console]
-----
-$ yosys -p "prep -top <top module>; write_json <output file>.json" <input file>.sv
-$ npx netlistsvg <output file>.json -o <output file>.svg
-----
-
-Готово.
-Можно любоваться полученной схемой.
-
-Чуть подробнее про магию можно почитать в README у netlistsvg.
