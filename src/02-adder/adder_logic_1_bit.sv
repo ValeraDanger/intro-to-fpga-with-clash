@@ -1,8 +1,8 @@
 module adder_logic_1_bit (
     input logic  a,
     input logic  b,
-    input logic  c_in, // <1>
-    output logic c_out, // <2>
+    input logic  c_in,
+    output logic c_out,
     output logic sum
 );
 
