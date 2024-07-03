@@ -36,7 +36,8 @@ initial
               c_out
           );
         else
-          $error( // <6>
+        begin
+          $display(
               {
                 "\nЧто-то тут не так:",
                 "\nc_in = %b, a = %b, b = %b, sum = %b, c_out = %b",
@@ -44,6 +45,8 @@ initial
               },
               c_in, a, b, sum, c_out, SumExpected[i], COutExpected[i]
           );
+          $fatal; // <6>
+        end
     end
   end
 endmodule
