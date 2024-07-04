@@ -4,7 +4,7 @@
 
 Разберём простейший тестбенч:
 [source, verilog]
-.testbenches/adder_1_bit_tb.sv
+.src/02-combination-logic/testbenches/adder_1_bit_tb.sv
 ----
 include::example$adder_1_bit_tb.sv[]
 ----
@@ -17,7 +17,7 @@ include::example$adder_1_bit_tb.sv[]
 
 Это больше похоже на привычные нам тесты. И раз они есть, значит можно сделать любимый всеми программистами CI.
 Во-первых, раз мы xref:01-basic-environment:ide-setup.adoc[настроили] линтер, то нужно запускать его автоматически.
-Как это сделали мы, можно посмотреть в файле `.github/workflows/lint.yaml`.
+Как это сделали мы, можно посмотреть{empty}footnote:[Репозиторий курса: https://github.com/Lamagraph/intro-to-fpga-with-clash] в файле `.github/workflows/lint.yaml`.
 Во-вторых, запускать всё вручную неприятно, напишем Makefile, на который можно посмотреть в файле `src/02-adder/Makefile`.
 Ну и в конце запустим всё это в CI. Опять, подробности можно посмотреть здесь: `.github/workflows/tests.yaml`.
 Готово, код проверяется, проект собирается, тесты запускаются.
