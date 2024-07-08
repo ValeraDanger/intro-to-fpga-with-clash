@@ -4,3 +4,4 @@ title: Курс по FPGA и Clash
 nav:
   - modules/ROOT/nav.adoc
   - modules/01-basic-environment/nav.adoc
+  - modules/02-combination-logic/nav.adoc

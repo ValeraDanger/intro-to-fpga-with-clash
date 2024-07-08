@@ -13,3 +13,6 @@ antora:
   extensions:
     - require: "@antora/lunr-extension"
       languages: [en, ru]
+asciidoc:
+  attributes:
+   figure-caption: 'Рисунок'
