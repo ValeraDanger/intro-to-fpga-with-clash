@@ -1,7 +1,7 @@
 IVERILOG ?= iverilog
 VVP ?= vvp
-SOURCES = implic.sv testbenches/implic_tb.sv
-TOPMODULE = implic_tb
+SOURCES = NOR_NAND_tb.sv NOR_NAND.sv
+TOPMODULE = NOR_NAND_tb
 IVERILOG_FLAGS = -g2012
 
 all: tests
