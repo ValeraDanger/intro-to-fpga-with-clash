@@ -34,14 +34,18 @@ module minmax_tb;
         initial begin
             $monitor("clk=%d, rst=%d, num=%d, max=%d, min = %d", clk, rst, num, max, min);
             num = 2;
+            #2;
             wait (!rst);
             @(posedge clk) num = 1;
-            @(posedge clk);             //Тот самый тик простоя. Без него данные некорректны
+            #2;                             //Задержки позволяют обновить входные данные в течение текущего такта. Позволяет не добавлять такты простоя
+            //@(posedge clk);             //Тот самый тик простоя. Без него данные некорректны
             @(posedge clk) num = 3;
+            #2;
             //@(posedge clk);           //Тик простоя в этом месте работает аналогично
-            @(posedge clk); 
+            //@(posedge clk); 
             @(posedge clk) begin
                 num = 0;
+                #2;
                 $finish();
             end
     end
